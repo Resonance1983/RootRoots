@@ -6,6 +6,10 @@ public class Box : MonoBehaviour
 {
     public Color finishColor;
     Color originColor;
+    [Header("对应数值")]
+    public int number;
+    [Header("层级检测")]
+    public LayerMask detectLayer;
 
     private void Start()
     {
@@ -17,14 +21,14 @@ public class Box : MonoBehaviour
     public bool CanMoveToDir(Vector2 dir)
     {
         //发射射线偏离一点（具体偏离数值、长度调试确定）
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3)dir * 0.5f, dir, 0.5f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3)dir * 0.5f, dir, 0.4f, detectLayer);
         //如果没打到东西
         if (!hit)
         {
             transform.Translate(dir);//dir表示要移动的距离，根据实际情况调整
             return true;
         }
-
+        Debug.Log("走不动啦！");
         return false;
     }
 
@@ -33,7 +37,6 @@ public class Box : MonoBehaviour
     {
         if(collision.CompareTag("Target"))
         {
-            Debug.Log("6666");
             FindObjectOfType<GameManager>().finishedBoxs++;
             FindObjectOfType<GameManager>().CheckFinish();
             GetComponent<SpriteRenderer>().color = finishColor;
