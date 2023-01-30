@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +7,7 @@ public class RotatingCamera : MonoBehaviour
 {
     public float rotateTime = 0.2f;
     private Transform player;
-    //·ÀÖ¹¶à´ÎÐý×ª³åÍ»
+    //ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Í»
     private bool isRotating = false;
     void Start()
     {
@@ -18,7 +18,7 @@ public class RotatingCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ÉãÏñ»ú¸úËæÍæ¼Ò
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         transform.position = player.position;
 
         Rotate();
@@ -36,10 +36,10 @@ public class RotatingCamera : MonoBehaviour
         }
     }
 
-    //Ðý×ª½Ç¶È Ðý×ªÊ±¼ä
+    //ï¿½ï¿½×ªï¿½Ç¶ï¿½ ï¿½ï¿½×ªÊ±ï¿½ï¿½
     IEnumerator RotateAround(float angle,float time)
     {
-        //¼ÆËãÐèÒªÐý×ª¶àÉÙ´Î£¨FixedUpdateÒ»ÃëÖ´ÐÐ60´Î£©
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½×ªï¿½ï¿½ï¿½Ù´Î£ï¿½FixedUpdateÒ»ï¿½ï¿½Ö´ï¿½ï¿½60ï¿½Î£ï¿½
         float number = 60 * time;
         float nextAngle = angle / number;
         isRotating = true;

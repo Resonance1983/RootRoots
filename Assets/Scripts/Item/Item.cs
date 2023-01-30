@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,9 +14,9 @@ public class Item : MonoBehaviour
         SQR
     }
     /// <summary>
-    /// 用于加减、根号等操作
+    /// 锟斤拷锟节加硷拷锟斤拷锟斤拷锟脚等诧拷锟斤拷
     /// </summary>
-    [Header("物品事件种类")]
+    [Header("锟斤拷品锟铰硷拷锟斤拷锟斤拷")]
     public ItemType itemType;
     int result;
 
