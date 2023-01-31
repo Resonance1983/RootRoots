@@ -16,7 +16,7 @@ public class Box : MonoBehaviour
 
     private void Start()
     {
-        originColor = GetComponent<SpriteRenderer>().color;
+        originColor = GetComponentInChildren<SpriteRenderer>().color;
         FindObjectOfType<GameManager>().totalBoxs++;
 
         boxNum.text = number.ToString();
