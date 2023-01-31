@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //单例模式
-class Level<T> : MonoBehaviour where T: MonoBehaviour {
+public class Level<T> : MonoBehaviour where T: MonoBehaviour {
 	static T instance;
 	public static T Instance
     {

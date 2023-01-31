@@ -65,7 +65,8 @@ public class Item : MonoBehaviour
                 default: break;
 
             }
-
+            //关闭当前脚本  防止重复运算
+            this.GetComponent<Item>().enabled= false;
         }
     }
 }
