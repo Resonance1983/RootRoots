@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("移动方向")]
     Vector2 moveDir;
+    [SerializeField]
+
     [Header("层级检测")]
     public LayerMask detectLayer;
 
