@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [Header("层级检测")]
     public LayerMask detectLayer;
 
+    [SerializeField]
+    float detactDistance = 1.5f;
     private void Start()
     {
 
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
     bool CanMoveToDir(Vector2 dir)
     {
         //detectLayer:避免射线打到本身
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 1.5f, detectLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, detactDistance, detectLayer);
 
         if (!hit)
             return true;
