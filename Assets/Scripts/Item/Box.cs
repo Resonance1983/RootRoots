@@ -11,24 +11,24 @@ public class Box : MonoBehaviour
     [Header("层级检测")]
     public LayerMask detectLayer;
 
-    [SerializeField]
-    Text boxNum;
+    //[SerializeField]
+    //Text boxNum;
 
     private void Start()
     {
         originColor = GetComponentInChildren<SpriteRenderer>().color;
         FindObjectOfType<GameManager>().totalBoxs++;
 
-        boxNum.text = number.ToString();
+        //boxNum.text = number.ToString();
     }
     /// <summary>
     /// 过于消耗性能  展示所用 后续删除
     /// </summary>
-    private void FixedUpdate()
-    {
-        boxNum.text = number.ToString();
-        boxNum.gameObject.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
-    }
+    //private void FixedUpdate()
+    //{
+    //    //boxNum.text = number.ToString();
+    //    boxNum.gameObject.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
+    //}
 
     //箱子同样进行射线检测
     public bool CanMoveToDir(Vector2 dir)

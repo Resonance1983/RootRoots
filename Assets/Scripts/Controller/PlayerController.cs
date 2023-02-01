@@ -6,12 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     [Header("移动方向")]
     Vector2 moveDir;
-    [SerializeField]
-
     [Header("层级检测")]
     public LayerMask detectLayer;
 
+    private void Start()
+    {
 
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.D))
@@ -59,6 +60,6 @@ public class PlayerController : MonoBehaviour
 
     void Move(Vector2 dir)
     {
-        transform.Translate(dir);//dir表示要移动的距离，根据实际情况调整
+        transform.Translate(dir , Space.World);//dir表示要移动的距离，根据实际情况调整
     }
 }
