@@ -5,31 +5,34 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("移动方向")]
-    Vector2 moveDir;
+    Vector3 moveDir;
+    Vector3 targetPosition;
     [Header("层级检测")]
     public LayerMask detectLayer;
 
     [SerializeField]
-    float detactDistance = 1.5f;
+    float detactDistance = 1.5f;//检测距离
+    [SerializeField]
+    float moveSpeed = 1f;
     private void Start()
     {
-
+        targetPosition = transform.position;
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.D))
-            moveDir = Vector2.right;
+            moveDir = Vector3.right;
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-            moveDir = Vector2.left;
+            moveDir = Vector3.left;
 
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            moveDir = Vector2.up;
+            moveDir = Vector3.up;
 
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            moveDir = Vector2.down;
+            moveDir = Vector3.down;
 
-        if(moveDir != Vector2.zero)
+        if(moveDir != Vector3.zero)
         {
             //如果该方向可以移动
             if(CanMoveToDir(moveDir))
@@ -38,12 +41,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        moveDir = Vector2.zero;
+        moveDir = Vector3.zero;
     }
 
 
     //射线检测判断能否移动
-    bool CanMoveToDir(Vector2 dir)
+    bool CanMoveToDir(Vector3 dir)
     {
         //detectLayer:避免射线打到本身
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, detactDistance, detectLayer);
@@ -60,8 +63,27 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    void Move(Vector2 dir)
+    void Move(Vector3 dir)
     {
-        transform.Translate(dir , Space.World);//dir表示要移动的距离，根据实际情况调整
+        //transform.Translate(dir , Space.World);//dir表示要移动的距离，根据实际情况调整
+
+        //求出将要移动目标位置
+
+        if (Vector3.Distance(transform.position , targetPosition ) < Mathf.Epsilon)
+        {
+            targetPosition = transform.position + dir;
+            StartCoroutine(PlayerMove(targetPosition));
+        }
+    }
+
+    //玩家移动协程
+    IEnumerator PlayerMove(Vector3 targetPosition)
+    {
+        while (Vector3.Distance(transform.position , targetPosition) > Mathf.Epsilon)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition,  Time.deltaTime * moveSpeed);
+            yield return null;
+        }
+
     }
 }
