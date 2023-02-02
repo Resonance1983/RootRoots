@@ -52,6 +52,7 @@ public class Item : MonoBehaviour
                 case ItemType.ADD:
                     collision.gameObject.GetComponent<Box>().number += addNumber;
                     Debug.Log(collision.gameObject.GetComponent<Box>().number);
+
                     Destroy(gameObject);
                     break;
                 case ItemType.SUB:
@@ -59,6 +60,7 @@ public class Item : MonoBehaviour
                     Debug.Log(collision.gameObject.GetComponent<Box>().number);
                     if (collision.gameObject.GetComponent<Box>().number < 0)
                         Debug.Log("负数  Loss");
+
                     Destroy(gameObject);
                     break;
                 case ItemType.MUL:
@@ -71,4 +73,5 @@ public class Item : MonoBehaviour
         }
     }
     
+
 }

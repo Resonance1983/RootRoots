@@ -12,16 +12,17 @@ public class Box : MonoBehaviour
     [Header("层级检测")]
     public LayerMask detectLayer;
 
-    //Box图片路径
-    public Sprite[] boxSprites;
     //[SerializeField]
     //Text boxNum;
+    SpriteRenderer boxSR;
     private void Start()
     {
         originColor = GetComponentInChildren<SpriteRenderer>().color;
         FindObjectOfType<GameManager>().totalBoxs++;
 
         //boxNum.text = number.ToString();
+        boxSR = GetComponent<SpriteRenderer>();
+        ReplaceBoxSprite(number);
     }
     
 
@@ -34,7 +35,21 @@ public class Box : MonoBehaviour
         if (!hit)
         {
             transform.Translate(dir);//dir表示要移动的距离，根据实际情况调整
+            ReplaceBoxSprite(number);
             return true;
+        }
+        else
+        {
+            //判断后方是否有箱子
+            if(hit.collider.GetComponent<Box>() != null)
+            {
+                number += hit.collider.GetComponent<Box>().number;
+                Debug.Log("推动箱子数量"+number);
+                ReplaceBoxSprite(number);
+
+                hit.collider.GetComponent<Box>().number = 0;
+                hit.collider.GetComponent<Box>().ReplaceBoxSprite(0);
+            }
         }
         Debug.Log("走不动啦！");
         return false;
@@ -58,18 +73,6 @@ public class Box : MonoBehaviour
         }
     }
 
-    //箱子图片替换
-    public void ReplaceBox()
-    {
-        if(number <= 6)
-        {
-            GetComponentInChildren<SpriteRenderer>().sprite = boxSprites[number];
-        }
-        else
-        {
-            GetComponentInChildren<SpriteRenderer>().sprite = boxSprites[6];
-        }
-    }
 
     //判断胜利失败
     public void WinOrLose()
@@ -87,5 +90,37 @@ public class Box : MonoBehaviour
             
             Debug.Log("失败");
         }
+    }
+
+    //切换箱子图片
+    void ReplaceBoxSprite(int boxcarrotNum)
+    {
+        string BoxSpritePath = "Item/Box/box_";
+        switch (boxcarrotNum)
+        {
+            case 0:
+                BoxSpritePath += "0";
+                break;
+            case 1:
+                BoxSpritePath += "1";
+                break;
+            case 2:
+                BoxSpritePath += "2";
+                break;
+            case 3:
+                BoxSpritePath += "3";
+                break;
+            case 4:
+                BoxSpritePath += "4";
+                break;
+            case 5:
+                BoxSpritePath += "5";
+                break;
+            default:
+                BoxSpritePath += "fill";
+                break;
+        }
+
+        boxSR.sprite = Resources.Load<Sprite>(BoxSpritePath);
     }
 }

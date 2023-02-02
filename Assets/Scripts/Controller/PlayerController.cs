@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
                 return hit.collider.GetComponent<Box>().CanMoveToDir(dir);
             }
         }
-
         return false;
     }
 
