@@ -17,13 +17,14 @@ public class GameManager : MonoBehaviour
 
     public void CheckFinish()
     {
-        if(finishedBoxs == totalBoxs)
+        if (finishedBoxs == totalBoxs)
         {
             print("YOU WIN!");
             //等几秒切换
             StartCoroutine(LoadNextStage());
         }
     }
+
 
     public void ResetStage()
     {

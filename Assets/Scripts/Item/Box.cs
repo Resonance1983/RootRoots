@@ -23,15 +23,7 @@ public class Box : MonoBehaviour
 
         //boxNum.text = number.ToString();
     }
-    /// <summary>
-    /// 过于消耗性能  展示所用 后续删除
-    /// </summary>
-    private void FixedUpdate()
-    {
-        //    //boxNum.text = number.ToString();
-        //    boxNum.gameObject.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
-        ReplaceBox();
-    }
+    
 
     //箱子同样进行射线检测
     public bool CanMoveToDir(Vector2 dir)
@@ -53,9 +45,7 @@ public class Box : MonoBehaviour
     {
         if(collision.CompareTag("Target"))
         {
-            FindObjectOfType<GameManager>().finishedBoxs++;
-            FindObjectOfType<GameManager>().CheckFinish();
-            GetComponent<SpriteRenderer>().color = finishColor;
+            WinOrLose();
         }
     }
 
@@ -64,7 +54,7 @@ public class Box : MonoBehaviour
         if (collision.CompareTag("Target"))
         {
             FindObjectOfType<GameManager>().finishedBoxs--;
-            GetComponent<SpriteRenderer>().color = originColor;
+            GetComponentInChildren<SpriteRenderer>().color = originColor;
         }
     }
 
@@ -73,11 +63,29 @@ public class Box : MonoBehaviour
     {
         if(number <= 6)
         {
-            GetComponent<SpriteRenderer>().sprite = boxSprites[number];
+            GetComponentInChildren<SpriteRenderer>().sprite = boxSprites[number];
         }
         else
         {
-            GetComponent<SpriteRenderer>().sprite = boxSprites[6];
+            GetComponentInChildren<SpriteRenderer>().sprite = boxSprites[6];
+        }
+    }
+
+    //判断胜利失败
+    public void WinOrLose()
+    {
+        if ((int)Mathf.Sqrt(number) == Mathf.Sqrt(number))
+        {
+            //过关
+            FindObjectOfType<GameManager>().finishedBoxs++;
+            FindObjectOfType<GameManager>().CheckFinish();
+            GetComponentInChildren<SpriteRenderer>().color = finishColor;
+            Debug.Log("胜利");
+        }
+        else
+        {
+            
+            Debug.Log("失败");
         }
     }
 }
