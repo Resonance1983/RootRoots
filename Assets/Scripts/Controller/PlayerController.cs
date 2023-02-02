@@ -14,31 +14,60 @@ public class PlayerController : MonoBehaviour
     float detactDistance = 1f;//检测距离
     [SerializeField]
     float moveSpeed = 4f;
+
+    //Animator相关
+    private Animator characterAnimator;
+    private int isMovingID = Animator.StringToHash("IsMoving");
+    private int verticalID = Animator.StringToHash("Vertical");
+    private int horizontalID = Animator.StringToHash("Horizontal");
+
     private void Start()
     {
         targetPosition = transform.position;
+        characterAnimator = GetComponent<Animator>();
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.D))
+        {
             moveDir = Vector3.right;
+            characterAnimator.SetFloat(verticalID, 1f);
+            characterAnimator.SetFloat(horizontalID, 0f);
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        {
             moveDir = Vector3.left;
+            characterAnimator.SetFloat(verticalID, -1f);
+            characterAnimator.SetFloat(horizontalID, 0f);
+        }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        {
             moveDir = Vector3.up;
+            characterAnimator.SetFloat(verticalID, 0f);
+            characterAnimator.SetFloat(horizontalID, 1f);
+        }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
             moveDir = Vector3.down;
+            characterAnimator.SetFloat(verticalID, 0f);
+            characterAnimator.SetFloat(horizontalID, -1f);
+        }
 
-        if(moveDir != Vector3.zero)
+        if (moveDir != Vector3.zero)
         {
             //如果该方向可以移动
             if(CanMoveToDir(moveDir))
             {
                 Move(moveDir);
             }
+            
+        }
+        else
+        {
+            characterAnimator.SetBool(isMovingID, false);
         }
 
         moveDir = Vector3.zero;
@@ -72,8 +101,14 @@ public class PlayerController : MonoBehaviour
 
         if (Vector3.Distance(transform.position , targetPosition ) < Mathf.Epsilon)
         {
+            characterAnimator.SetBool(isMovingID, true);
             targetPosition = transform.position + dir;
             StartCoroutine(PlayerMove(targetPosition));
+            Debug.Log("Moving");
+        }
+        else
+        {
+            Debug.Log("NotMoving");
         }
     }
 
