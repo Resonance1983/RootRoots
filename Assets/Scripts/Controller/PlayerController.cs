@@ -56,8 +56,10 @@ public class PlayerController : MonoBehaviour
         else
         {
             if (hit.collider.GetComponent<Box>() != null)
-                //如果检测到的是箱子，则告诉箱子可以移动
+            {
+                //如果检测到的是箱子 并且箱子后没有箱子 则告诉箱子可以移动
                 return hit.collider.GetComponent<Box>().CanMoveToDir(dir);
+            }
         }
 
         return false;

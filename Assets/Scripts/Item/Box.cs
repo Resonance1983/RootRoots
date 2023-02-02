@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+[RequireComponent(typeof(Rigidbody2D))]
 public class Box : MonoBehaviour
 {
     public Color finishColor;
@@ -15,7 +16,6 @@ public class Box : MonoBehaviour
     public Sprite[] boxSprites;
     //[SerializeField]
     //Text boxNum;
-
     private void Start()
     {
         originColor = GetComponentInChildren<SpriteRenderer>().color;

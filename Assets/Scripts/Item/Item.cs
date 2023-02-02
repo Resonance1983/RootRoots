@@ -43,7 +43,6 @@ public class Item : MonoBehaviour
                     else
                     {
                         Destroy(collision.gameObject);
-                        Destroy(gameObject);
                         Debug.Log("无法开根 箱子与方块消失");
                     }
                     //TODO
@@ -53,10 +52,14 @@ public class Item : MonoBehaviour
                 case ItemType.ADD:
                     collision.gameObject.GetComponent<Box>().number += addNumber;
                     Debug.Log(collision.gameObject.GetComponent<Box>().number);
+                    Destroy(gameObject);
                     break;
                 case ItemType.SUB:
                     collision.gameObject.GetComponent<Box>().number -= subNumber;
                     Debug.Log(collision.gameObject.GetComponent<Box>().number);
+                    if (collision.gameObject.GetComponent<Box>().number < 0)
+                        Debug.Log("负数  Loss");
+                    Destroy(gameObject);
                     break;
                 case ItemType.MUL:
                     break;
@@ -65,8 +68,6 @@ public class Item : MonoBehaviour
                 default: break;
 
             }
-            //关闭当前脚本  防止重复运算
-            this.GetComponent<Item>().enabled= false;
         }
     }
     
