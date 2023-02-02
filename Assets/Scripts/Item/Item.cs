@@ -69,4 +69,5 @@ public class Item : MonoBehaviour
             this.GetComponent<Item>().enabled= false;
         }
     }
+    
 }

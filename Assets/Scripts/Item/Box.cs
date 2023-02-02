@@ -11,6 +11,8 @@ public class Box : MonoBehaviour
     [Header("层级检测")]
     public LayerMask detectLayer;
 
+    //Box图片路径
+    public Sprite[] boxSprites;
     //[SerializeField]
     //Text boxNum;
 
@@ -24,11 +26,12 @@ public class Box : MonoBehaviour
     /// <summary>
     /// 过于消耗性能  展示所用 后续删除
     /// </summary>
-    //private void FixedUpdate()
-    //{
-    //    //boxNum.text = number.ToString();
-    //    boxNum.gameObject.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
-    //}
+    private void FixedUpdate()
+    {
+        //    //boxNum.text = number.ToString();
+        //    boxNum.gameObject.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
+        ReplaceBox();
+    }
 
     //箱子同样进行射线检测
     public bool CanMoveToDir(Vector2 dir)
@@ -62,6 +65,19 @@ public class Box : MonoBehaviour
         {
             FindObjectOfType<GameManager>().finishedBoxs--;
             GetComponent<SpriteRenderer>().color = originColor;
+        }
+    }
+
+    //箱子图片替换
+    public void ReplaceBox()
+    {
+        if(number <= 6)
+        {
+            GetComponent<SpriteRenderer>().sprite = boxSprites[number];
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = boxSprites[6];
         }
     }
 }
