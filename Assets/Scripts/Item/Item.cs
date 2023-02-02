@@ -70,6 +70,7 @@ public class Item : MonoBehaviour
                 default: break;
 
             }
+            collision.GetComponent<Box>().ReplaceBoxSprite(collision.gameObject.GetComponent<Box>().number);
         }
     }
     

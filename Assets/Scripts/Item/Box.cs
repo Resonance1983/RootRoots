@@ -34,8 +34,8 @@ public class Box : MonoBehaviour
         //如果没打到东西
         if (!hit)
         {
-            transform.Translate(dir);//dir表示要移动的距离，根据实际情况调整
             ReplaceBoxSprite(number);
+            transform.Translate(dir);//dir表示要移动的距离，根据实际情况调整
             return true;
         }
         else
@@ -93,7 +93,7 @@ public class Box : MonoBehaviour
     }
 
     //切换箱子图片
-    void ReplaceBoxSprite(int boxcarrotNum)
+    public void ReplaceBoxSprite(int boxcarrotNum)
     {
         string BoxSpritePath = "Item/Box/box_";
         switch (boxcarrotNum)
