@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask detectLayer;
 
     [SerializeField]
-    float detactDistance = 1.5f;//检测距离
+    float detactDistance = 1f;//检测距离
     [SerializeField]
-    float moveSpeed = 1f;
+    float moveSpeed = 4f;
     private void Start()
     {
         targetPosition = transform.position;
