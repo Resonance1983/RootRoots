@@ -59,5 +59,6 @@ public class UIManager : MonoBehaviour {
     {
         //player.Init();
         Status = Game_Status.Ready;
+
     }
 }
