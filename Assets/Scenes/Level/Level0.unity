@@ -289,7 +289,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 6665f2acc3546b2458d126fa8dd428fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -654,19 +654,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2229075274724013208, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
       propertyPath: number
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2229075274724013208, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
       propertyPath: moveSpeed
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 2229075274724013209, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 52ef300a0936d864388ccb7c0715ce02, type: 3}
-    - target: {fileID: 2229075274724013209, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
+    - target: {fileID: 2229075274724013208, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
+      propertyPath: detactDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229075274724013208, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
+      propertyPath: detectLayer.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 2229075274724013211, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
       propertyPath: m_Size.x
@@ -719,6 +719,18 @@ PrefabInstance:
     - target: {fileID: 4015389874437629713, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
       propertyPath: detactDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015389874437629714, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015389874437629714, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015389874437629717, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4015389874437629717, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8224,7 +8236,6 @@ PrefabInstance:
     - {fileID: 4015389874437629712, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
     - {fileID: 5538060368609225657, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
     - {fileID: 6046938706041039029, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
-    - {fileID: 2229075274724013209, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
 --- !u!4 &8006856239532419560 stripped
 Transform:
