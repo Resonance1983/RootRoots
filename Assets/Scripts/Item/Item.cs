@@ -53,11 +53,20 @@ public class Item : MonoBehaviour
                     collision.gameObject.GetComponent<Box>().number += addNumber;
                     Debug.Log(collision.gameObject.GetComponent<Box>().number);
 
+                    //播放萝卜调入箱子的动画
+                    collision.transform.GetChild(1).gameObject.SetActive(true);
+                    collision.gameObject.GetComponentInChildren<Carrot>().carrotAnim.SetBool("AddCarrot", true);
+
                     Destroy(gameObject);
                     break;
                 case ItemType.SUB:
                     collision.gameObject.GetComponent<Box>().number -= subNumber;
                     Debug.Log(collision.gameObject.GetComponent<Box>().number);
+
+                    //播放萝卜飞出箱子的动画
+                    collision.transform.GetChild(1).gameObject.SetActive(true);
+                    collision.gameObject.GetComponentInChildren<Carrot>().carrotAnim.SetBool("SubCarrot", true);
+
                     if (collision.gameObject.GetComponent<Box>().number < 0)
                         Debug.Log("负数  Loss");
 
