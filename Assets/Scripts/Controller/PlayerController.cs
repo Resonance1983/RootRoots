@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
             characterAnimator.SetFloat(verticalID, 0f);
             characterAnimator.SetFloat(horizontalID, -1f);
         }
-
         if (moveDir != Vector3.zero)
         {
             if (CanMoveToDir(moveDir))
@@ -84,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
         if (!hit)
         {
+            Debug.Log("unhit");
             pushing = false;
             return true;
         }   
@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.collider.GetComponent<Box>() != null)
             {
+                Debug.Log("hitbox");
                 //如果检测到的是箱子 并且箱子后没有箱子 则告诉箱子可以移动
                 pushing = true;
                 return hit.collider.GetComponent<Box>().CanMoveToDir(dir);
@@ -98,7 +99,6 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
-
     void Move(Vector3 dir)
     {
         //transform.Translate(dir , Space.World);//dir表示要移动的距离，根据实际情况调整
@@ -115,14 +115,9 @@ public class PlayerController : MonoBehaviour
             {
                 characterAnimator.SetBool(isMovingID, true);
             }
-            
+
             targetPosition = transform.position + dir;
             StartCoroutine(PlayerMove(targetPosition));
-            Debug.Log("Moving");
-        }
-        else
-        {
-            Debug.Log("NotMoving");
         }
     }
 

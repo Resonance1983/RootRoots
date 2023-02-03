@@ -11,8 +11,6 @@ public class Box : MonoBehaviour
     public int number;
     [Header("层级检测")]
     public LayerMask detectLayer;
-    [SerializeField]
-    float detactDistance = 1f;//检测距离
     [Header("移动方向")]
     Vector3 targetPosition;
     [Header("箱子移动速度")]
@@ -99,35 +97,7 @@ public class Box : MonoBehaviour
         }
     }
 
-    //检测并改变图层遮挡顺序
-    private void ChangeLayerOrder()
-    { 
-        //detectLayer:避免射线打到本身
-        RaycastHit2D hitUp = Physics2D.Raycast(transform.position, Vector3.up, detactDistance, detectLayer);
-        RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector3.down, detactDistance, detectLayer);
-        if (!hitUp&&!hitDown)
-        {
-            Debug.Log("unhit");
-            SpriteRenderer spriterenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
-            spriterenderer.sortingOrder = 5;
-        }
-        else
-        {
-            if (hitUp.collider.tag == "Player")
-            {
-                Debug.Log("hitup");
-                SpriteRenderer spriterenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
-                spriterenderer.sortingOrder = 6;
-            }
-            if (hitDown.collider.tag == "Player")
-            {
-                Debug.Log("hitdown");
-                SpriteRenderer spriterenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
-                spriterenderer.sortingOrder = 4;
-            }
-        }
-    }
-
+    
     //切换箱子图片
     public void ReplaceBoxSprite(int boxcarrotNum)
     {
@@ -166,10 +136,6 @@ public class Box : MonoBehaviour
         {
             targetPosition = transform.position + moveDir;
             StartCoroutine(BoxMove(targetPosition));
-        }
-        else
-        {
-
         }
     }
     IEnumerator BoxMove(Vector3 targetPosition)
