@@ -15,9 +15,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float moveSpeed = 4f;
 
+    //移动状态 false=正常移动，true=推箱子移动
+    private bool pushing;
+
     //Animator相关
     private Animator characterAnimator;
     private int isMovingID = Animator.StringToHash("IsMoving");
+    private int isPushingID = Animator.StringToHash("IsPushing");
     private int verticalID = Animator.StringToHash("Vertical");
     private int horizontalID = Animator.StringToHash("Horizontal");
 
@@ -58,18 +62,16 @@ public class PlayerController : MonoBehaviour
 
         if (moveDir != Vector3.zero)
         {
-            //如果该方向可以移动
-            if(CanMoveToDir(moveDir))
+            if (CanMoveToDir(moveDir))
             {
                 Move(moveDir);
             }
-            
         }
         else
         {
+            characterAnimator.SetBool(isPushingID, false);
             characterAnimator.SetBool(isMovingID, false);
         }
-
         moveDir = Vector3.zero;
     }
 
@@ -81,12 +83,16 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, detactDistance, detectLayer);
 
         if (!hit)
+        {
+            pushing = false;
             return true;
+        }   
         else
         {
             if (hit.collider.GetComponent<Box>() != null)
             {
                 //如果检测到的是箱子 并且箱子后没有箱子 则告诉箱子可以移动
+                pushing = true;
                 return hit.collider.GetComponent<Box>().CanMoveToDir(dir);
             }
         }
@@ -101,7 +107,15 @@ public class PlayerController : MonoBehaviour
 
         if (Vector3.Distance(transform.position , targetPosition ) < Mathf.Epsilon)
         {
-            characterAnimator.SetBool(isMovingID, true);
+            if (pushing)
+            {
+                characterAnimator.SetBool(isPushingID, true);
+            }
+            else
+            {
+                characterAnimator.SetBool(isMovingID, true);
+            }
+            
             targetPosition = transform.position + dir;
             StartCoroutine(PlayerMove(targetPosition));
             Debug.Log("Moving");
