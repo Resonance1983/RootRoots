@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,10 +26,12 @@ public class PlayerController : MonoBehaviour
     private int verticalID = Animator.StringToHash("Vertical");
     private int horizontalID = Animator.StringToHash("Horizontal");
 
+    //input相关
+    
     private void Start()
     {
         targetPosition = transform.position;
-        characterAnimator = GetComponent<Animator>();
+        characterAnimator = GetComponentInChildren<Animator>();
     }
     void Update()
     {
@@ -131,4 +134,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 }
