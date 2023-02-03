@@ -40,6 +40,7 @@ public class Box : MonoBehaviour
         //如果没打到东西
         if (!hit)
         {
+            Debug.Log("box not hit");
             ReplaceBoxSprite(number);
             Move(dir);//dir表示要移动的距离，根据实际情况调整
             return true;
@@ -47,7 +48,7 @@ public class Box : MonoBehaviour
         else
         {
             //判断后方是否有箱子
-            if(hit.collider.GetComponent<Box>() != null)
+            if (hit.collider.GetComponent<Box>() != null)
             {
                 number += hit.collider.GetComponent<Box>().number;
                 Debug.Log("推动箱子数量"+number);
