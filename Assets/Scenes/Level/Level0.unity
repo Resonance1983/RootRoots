@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 587831574}
   m_LocalRotation: {x: 0.22231433, y: 0, z: 0, w: 0.97497505}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 0.045, y: 0.045, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8006856239532419560}
@@ -290,12 +290,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 52ef300a0936d864388ccb7c0715ce02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6665f2acc3546b2458d126fa8dd428fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7248757, y: 2.487708}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -654,6 +654,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2229075274724013208, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
       propertyPath: number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229075274724013208, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
+      propertyPath: moveSpeed
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2229075274724013209, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}

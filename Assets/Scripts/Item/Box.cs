@@ -11,6 +11,10 @@ public class Box : MonoBehaviour
     public int number;
     [Header("层级检测")]
     public LayerMask detectLayer;
+    [Header("移动方向")]
+    Vector3 targetPosition;
+    [Header("箱子移动速度")]
+    public float moveSpeed = 1f;
 
     //[SerializeField]
     //Text boxNum;
@@ -21,7 +25,7 @@ public class Box : MonoBehaviour
         FindObjectOfType<GameManager>().totalBoxs++;
 
         //boxNum.text = number.ToString();
-        boxSR = GetComponent<SpriteRenderer>();
+        boxSR = GetComponentInChildren<SpriteRenderer>();
         ReplaceBoxSprite(number);
     }
     
@@ -30,12 +34,12 @@ public class Box : MonoBehaviour
     public bool CanMoveToDir(Vector2 dir)
     {
         //发射射线偏离一点（具体偏离数值、长度调试确定）
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3)dir * 0.5f, dir, 0.4f, detectLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3)dir *0.5f, dir, 0.4f, detectLayer);
         //如果没打到东西
         if (!hit)
         {
             ReplaceBoxSprite(number);
-            transform.Translate(dir);//dir表示要移动的距离，根据实际情况调整
+            Move(dir);//dir表示要移动的距离，根据实际情况调整
             return true;
         }
         else
@@ -46,7 +50,6 @@ public class Box : MonoBehaviour
                 number += hit.collider.GetComponent<Box>().number;
                 Debug.Log("推动箱子数量"+number);
                 ReplaceBoxSprite(number);
-
                 hit.collider.GetComponent<Box>().number = 0;
                 hit.collider.GetComponent<Box>().ReplaceBoxSprite(0);
             }
@@ -122,5 +125,28 @@ public class Box : MonoBehaviour
         }
 
         boxSR.sprite = Resources.Load<Sprite>(BoxSpritePath);
+    }
+
+    public void Move(Vector3 moveDir)
+    {
+        if (Vector3.Distance(transform.position, targetPosition) < Mathf.Epsilon)
+        {
+            
+            targetPosition = transform.position + moveDir;
+            StartCoroutine(BoxMove(targetPosition));
+        }
+        else
+        {
+
+        }
+    }
+    IEnumerator BoxMove(Vector3 targetPosition)
+    {
+        while (Vector3.Distance(transform.position, targetPosition) > Mathf.Epsilon)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed);
+            yield return null;
+        }
+
     }
 }
