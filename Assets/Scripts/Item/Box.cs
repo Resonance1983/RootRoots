@@ -60,18 +60,19 @@ public class Box : MonoBehaviour
     {
         if(collision.CompareTag("Target"))
         {
+
             WinOrLose();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Target"))
-        {
-            FindObjectOfType<GameManager>().finishedBoxs--;
-            GetComponentInChildren<SpriteRenderer>().color = originColor;
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Target"))
+    //    {
+    //        FindObjectOfType<GameManager>().finishedBoxs--;
+    //        GetComponentInChildren<SpriteRenderer>().color = originColor;
+    //    }
+    //}
 
 
     //判断胜利失败
@@ -82,6 +83,10 @@ public class Box : MonoBehaviour
             //过关
             FindObjectOfType<GameManager>().finishedBoxs++;
             FindObjectOfType<GameManager>().CheckFinish();
+
+            //箱子消失
+            Destroy(gameObject);
+
             GetComponentInChildren<SpriteRenderer>().color = finishColor;
             Debug.Log("胜利");
         }
@@ -90,6 +95,7 @@ public class Box : MonoBehaviour
             
             Debug.Log("失败");
         }
+
     }
 
     //切换箱子图片
