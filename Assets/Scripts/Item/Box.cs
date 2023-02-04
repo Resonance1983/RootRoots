@@ -115,6 +115,9 @@ public class Box : MonoBehaviour
         string BoxSpritePath = "Item/Box/box_";
         switch (boxcarrotNum)
         {
+            case -1:
+            case -2:
+            case -3:
             case 0:
                 BoxSpritePath += "0";
                 break;
