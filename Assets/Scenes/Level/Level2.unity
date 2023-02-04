@@ -914,6 +914,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 758e3e7fa747dc642b0bbd34964cad20, type: 3}
+--- !u!114 &527345031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5279976698862462247, guid: 758e3e7fa747dc642b0bbd34964cad20, type: 3}
+  m_PrefabInstance: {fileID: 527345030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aad2f7c86f61b44d80447ac77ecba9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &540809752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1417,6 +1428,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8462799641669564, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 527345031}
+    - target: {fileID: 8462799641669564, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetStage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462800047136567, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 527345031}
+    - target: {fileID: 8462800047136567, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetStage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462800409798769, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 527345031}
+    - target: {fileID: 8462800409798769, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNext
+      objectReference: {fileID: 0}
     - target: {fileID: 8462801304108233, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
       propertyPath: m_Pivot.x
       value: 0

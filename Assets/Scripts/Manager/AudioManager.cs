@@ -48,8 +48,20 @@ public class AudioManager : Level<AudioManager>
     [Header("UI音效")]
     public AudioClip clickclip;
 
+    //不销毁音效
+    private static AudioManager instance;
+
     private void Awake()
     {
+        //保障只有一个audioManager
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("AudioManager");
+
+        if (objs.Length > 1) {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+
         playerSource = gameObject.AddComponent<AudioSource>();
         playerSource.outputAudioMixerGroup = sound;
         playerSource.volume = 0.6f;
@@ -102,4 +114,5 @@ public class AudioManager : Level<AudioManager>
         playerSource.clip = playerMoveClip;
         playerSource.Play();
     }
+
 }
