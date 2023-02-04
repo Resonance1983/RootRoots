@@ -27,8 +27,4 @@ public class AudioManager : Level<AudioManager>
     [Header("交互音效")]
     public AudioClip computClip;
 
-    private void Awake()
-    {
-        
-    }
 }
