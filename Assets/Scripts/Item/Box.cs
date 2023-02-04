@@ -20,6 +20,7 @@ public class Box : MonoBehaviour
     //[SerializeField]
     //Text boxNum;
     SpriteRenderer boxSR;
+    SpriteRenderer boxCover;
     private void Start()
     {
         targetPosition = transform.position;
@@ -28,7 +29,8 @@ public class Box : MonoBehaviour
         FindObjectOfType<GameManager>().totalBoxs++;
 
         //boxNum.text = number.ToString();
-        boxSR = GetComponentInChildren<SpriteRenderer>();
+        boxSR = transform.GetChild(0).GetComponentInChildren<SpriteRenderer>();
+        boxCover = transform.GetChild(2).GetComponentInChildren<SpriteRenderer>();
         ReplaceBoxSprite(number);
     }
 
@@ -142,6 +144,26 @@ public class Box : MonoBehaviour
         }
 
         boxSR.sprite = Resources.Load<Sprite>(BoxSpritePath);
+    }
+
+    public void ReplaceCoverSprite(int num)
+    {
+        string CoverSpritePath = "Item/Box/box_";
+        switch (num)
+        {
+            case 0:
+                CoverSpritePath += "7";
+                break;
+            case 1:
+                CoverSpritePath += "9";
+                break;
+            case 2:
+                CoverSpritePath += "15";
+                break;
+            case 3:
+                CoverSpritePath += "16";
+                break;
+        }
     }
 
     public void Move(Vector3 moveDir)
