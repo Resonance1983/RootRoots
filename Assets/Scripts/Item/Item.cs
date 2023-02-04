@@ -42,7 +42,7 @@ public class Item : MonoBehaviour
             {
                 case ItemType.SQR:
                     //result = ((int)Mathf.Sqrt(result) == Mathf.Sqrt(result)) ? (int)Mathf.Sqrt(result) : result ;
-                    if ((int)Mathf.Sqrt(result) == Mathf.Sqrt(result))
+                    if ((int)Mathf.Sqrt(result) == Mathf.Sqrt(result) && result != 0)
                     {
                         result = (int)Mathf.Sqrt(result);
                         Debug.Log(result);
