@@ -76,10 +76,6 @@ public class Item : MonoBehaviour
                     collision.gameObject.GetComponent<Box>().number -= subNumber;
                     Debug.Log(collision.gameObject.GetComponent<Box>().number);
 
-                    
-
-                   
-
                     if (collision.gameObject.GetComponent<Box>().number < 0)
                         Debug.Log("负数  Loss");
                     characterAnimator.SetBool(usedID, true);
