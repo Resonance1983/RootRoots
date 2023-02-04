@@ -1088,6 +1088,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box
       objectReference: {fileID: 0}
+    - target: {fileID: 3116403785944193360, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116403785944193360, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.123
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116403785944193360, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.999962
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116403785944193360, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.008726465
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116403785944193360, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7313409705147165379, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.17
@@ -3852,7 +3872,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3983,8 +4003,8 @@ Tilemap:
     m_Data: {fileID: 1156995345, guid: bad2484d2acf120468ff37fe05aaad60, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1669502219, guid: bad2484d2acf120468ff37fe05aaad60, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -100352993, guid: bad2484d2acf120468ff37fe05aaad60, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -78966799, guid: bad2484d2acf120468ff37fe05aaad60, type: 3}
   - m_RefCount: 2
@@ -4007,8 +4027,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -100352993, guid: bad2484d2acf120468ff37fe05aaad60, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 3
     m_Data:

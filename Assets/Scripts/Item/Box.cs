@@ -44,6 +44,7 @@ public class Box : MonoBehaviour
         {
             Debug.Log("box not hit");
             ReplaceBoxSprite(number);
+            
             Move(dir);//dir表示要移动的距离，根据实际情况调整
             return true;
         }
@@ -144,6 +145,16 @@ public class Box : MonoBehaviour
         }
 
         boxSR.sprite = Resources.Load<Sprite>(BoxSpritePath);
+
+        if (boxcarrotNum > 5)
+        {
+            
+            ReplaceCoverSprite(boxcarrotNum);
+        }
+        else
+        {
+            boxCover.sprite = null;
+        }
     }
 
     public void ReplaceCoverSprite(int num)
@@ -151,19 +162,20 @@ public class Box : MonoBehaviour
         string CoverSpritePath = "Item/Box/box_";
         switch (num)
         {
-            case 0:
+            case 7:
                 CoverSpritePath += "7";
                 break;
-            case 1:
+            case 9:
                 CoverSpritePath += "9";
                 break;
-            case 2:
+            case 15:
                 CoverSpritePath += "15";
                 break;
-            case 3:
+            case 16:
                 CoverSpritePath += "16";
                 break;
         }
+        boxCover.sprite = Resources.Load<Sprite>(CoverSpritePath);
     }
 
     public void Move(Vector3 moveDir)
