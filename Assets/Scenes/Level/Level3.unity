@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2982005593204937167}
     m_Modifications:
+    - target: {fileID: 2144123406907672852, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
+      propertyPath: subNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2144123406907672854, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -179,6 +183,10 @@ PrefabInstance:
       value: CarrotFly
       objectReference: {fileID: 0}
     - target: {fileID: 2392659366056749842, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ecd6d4328678324e9cc207d54ee60ef, type: 3}
+    - target: {fileID: 2392659366056749842, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
@@ -194,6 +202,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 7638477135633863334, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 89d726613aefef24196ea143efbcba28, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
 --- !u!4 &218936015 stripped
@@ -359,6 +371,10 @@ PrefabInstance:
     - target: {fileID: 5279976698862462246, guid: 758e3e7fa747dc642b0bbd34964cad20, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279976698862462247, guid: 758e3e7fa747dc642b0bbd34964cad20, type: 3}
+      propertyPath: totalBoxs
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5279976698862462248, guid: 758e3e7fa747dc642b0bbd34964cad20, type: 3}
       propertyPath: m_RootOrder
@@ -2294,7 +2310,7 @@ CompositeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.03
   m_ColliderPaths:
   - m_Collider: {fileID: 1808275628}
     m_ColliderPaths:

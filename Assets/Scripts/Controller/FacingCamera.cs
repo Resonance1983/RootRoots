@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FacingCamera : MonoBehaviour
 {
-    //��ȡ����������
+    
     Transform[] childs;
     void Start()
     {
-        //ѭ����ȡҪ�����������������
+        
         childs = new Transform[transform.childCount];
         for(int i = 0; i < transform.childCount; i++)
         {
@@ -18,7 +18,7 @@ public class FacingCamera : MonoBehaviour
 
     void Update()
     {
-        //�����е�spriteʼ�ճ��������
+        
         for(int i = 0; i < childs.Length; i++)
         {
             childs[i].rotation = Camera.main.transform.rotation;

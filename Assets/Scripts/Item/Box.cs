@@ -26,7 +26,7 @@ public class Box : MonoBehaviour
         targetPosition = transform.position;
 
         originColor = GetComponentInChildren<SpriteRenderer>().color;
-        FindObjectOfType<GameManager>().totalBoxs++;
+        
 
         //boxNum.text = number.ToString();
         boxSR = transform.GetChild(0).GetComponentInChildren<SpriteRenderer>();
@@ -90,6 +90,7 @@ public class Box : MonoBehaviour
         GameObject Dialog = GameObject.Find("Canvas").transform.Find("Dialog").gameObject;
         TextMesh dialogText = Dialog.GetComponent<TextMesh>();
 
+        
         if ((int)Mathf.Sqrt(number) == Mathf.Sqrt(number))
         {
             //过关
