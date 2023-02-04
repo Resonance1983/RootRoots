@@ -87,9 +87,6 @@ public class Box : MonoBehaviour
     //判断胜利失败
     public void WinOrLose()
     {
-        GameObject Dialog = GameObject.Find("Canvas").transform.Find("Dialog").gameObject;
-        TextMesh dialogText = Dialog.GetComponent<TextMesh>();
-
         
         if ((int)Mathf.Sqrt(number) == Mathf.Sqrt(number))
         {
@@ -103,13 +100,9 @@ public class Box : MonoBehaviour
             GetComponentInChildren<SpriteRenderer>().color = finishColor;
             Debug.Log("胜利");
 
-            dialogText.text = "You win!";
-            Dialog.SetActive(true);
         }
         else
         {
-            dialogText.text = "You false!";
-            Dialog.SetActive(true);
             Debug.Log("失败");
         }
 
@@ -122,6 +115,9 @@ public class Box : MonoBehaviour
         string BoxSpritePath = "Item/Box/box_";
         switch (boxcarrotNum)
         {
+            case -1:
+            case -2:
+            case -3:
             case 0:
                 BoxSpritePath += "0";
                 break;
