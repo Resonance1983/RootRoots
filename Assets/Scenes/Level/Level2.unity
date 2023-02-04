@@ -991,6 +991,10 @@ PrefabInstance:
       propertyPath: number
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1481444677357776555, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
+      propertyPath: detectLayer.m_Bits
+      value: 1344
+      objectReference: {fileID: 0}
     - target: {fileID: 1481444677357776556, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1476,6 +1480,10 @@ PrefabInstance:
     - target: {fileID: 1481444677357776555, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
       propertyPath: number
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481444677357776555, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
+      propertyPath: detectLayer.m_Bits
+      value: 1344
       objectReference: {fileID: 0}
     - target: {fileID: 1481444677357776556, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
       propertyPath: m_RootOrder
@@ -2018,6 +2026,10 @@ PrefabInstance:
     - target: {fileID: 1481444677357776555, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
       propertyPath: number
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481444677357776555, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
+      propertyPath: detectLayer.m_Bits
+      value: 1344
       objectReference: {fileID: 0}
     - target: {fileID: 1481444677357776556, guid: 5e9e5d0a3a265724b800c28aa0c63635, type: 3}
       propertyPath: m_RootOrder
@@ -5169,6 +5181,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarrotFly
       objectReference: {fileID: 0}
+    - target: {fileID: 2392659366056749842, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ecd6d4328678324e9cc207d54ee60ef, type: 3}
+    - target: {fileID: 2392659366056749842, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638477135633863334, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 89d726613aefef24196ea143efbcba28, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
 --- !u!4 &8628939340448892435 stripped
