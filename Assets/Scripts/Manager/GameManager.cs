@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("要达成的箱子数量")]
     public int totalBoxs;
     public int finishedBoxs;
 
