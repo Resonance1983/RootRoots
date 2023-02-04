@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [Header("要达成的箱子数量")]
     public int totalBoxs;
     public int finishedBoxs;
+    public GameObject loadScreen;
 
     private void Update()
     {
@@ -34,14 +35,28 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void LoadNext(){
+    public void LoadNext() {
         StartCoroutine(LoadNextStage());
     }
 
     IEnumerator LoadNextStage()
     {
-        yield return new WaitForSeconds(1);
+        loadScreen.SetActive(true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        operation.allowSceneActivation = false;
+        yield return new WaitForSeconds(3);
+        operation.allowSceneActivation = true;
         //当前关卡编号+1
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    //退出游戏
+    public void OnExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 }

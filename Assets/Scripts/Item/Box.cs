@@ -15,6 +15,8 @@ public class Box : MonoBehaviour
     Vector3 targetPosition;
     [Header("箱子移动速度")]
     public float moveSpeed = 1f;
+    [Header("失败ui")]
+    public GameObject loseUI;
 
 
     //[SerializeField]
@@ -99,11 +101,10 @@ public class Box : MonoBehaviour
 
             GetComponentInChildren<SpriteRenderer>().color = finishColor;
             Debug.Log("胜利");
-
         }
         else
         {
-            Debug.Log("失败");
+            loseUI.SetActive(true);
         }
 
     }
