@@ -21,8 +21,10 @@ public class GameManager : MonoBehaviour
         if (finishedBoxs == totalBoxs)
         {
             print("YOU WIN!");
-            //等几秒切换
-            StartCoroutine(LoadNextStage());
+            //显示结束UI
+            GameObject Dialog = GameObject.Find("Canvas").transform.Find("Dialog").gameObject;
+            Dialog.SetActive(true);
+            //StartCoroutine(LoadNextStage());
         }
     }
 
@@ -32,9 +34,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void LoadNext(){
+        StartCoroutine(LoadNextStage());
+    }
+
     IEnumerator LoadNextStage()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         //当前关卡编号+1
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
