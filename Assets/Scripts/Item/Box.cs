@@ -18,6 +18,7 @@ public class Box : MonoBehaviour
     [Header("失败ui")]
     public GameObject loseUI;
 
+    
 
     //[SerializeField]
     //Text boxNum;
@@ -172,11 +173,26 @@ public class Box : MonoBehaviour
             case 7:
                 CoverSpritePath += "7";
                 break;
+            case 8:
+                CoverSpritePath += "8";
+                break;
             case 9:
                 CoverSpritePath += "9";
                 break;
             case 10:
                 CoverSpritePath += "10";
+                break;
+            case 11:
+                CoverSpritePath += "11";
+                break;
+            case 12:
+                CoverSpritePath += "12";
+                break;
+            case 13:
+                CoverSpritePath += "13";
+                break;
+            case 14:
+                CoverSpritePath += "14";
                 break;
             case 15:
                 CoverSpritePath += "15";
@@ -186,6 +202,9 @@ public class Box : MonoBehaviour
                 break;
             case 17:
                 CoverSpritePath += "17";
+                break;
+            case 18:
+                CoverSpritePath += "18";
                 break;
         }
         boxCover.sprite = Resources.Load<Sprite>(CoverSpritePath);
