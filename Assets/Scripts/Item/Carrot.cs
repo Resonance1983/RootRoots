@@ -11,7 +11,7 @@ public class Carrot : MonoBehaviour
         carrotAnim= GetComponent<Animator>();
     }
 
-    //关闭所有动画 (当前有bug)
+    //关闭所有动画 
     public void StopAllAnimation()
     {
         carrotAnim.SetBool("AddCarrot", false);
