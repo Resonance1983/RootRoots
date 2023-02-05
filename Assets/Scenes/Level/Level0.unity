@@ -825,6 +825,10 @@ PrefabInstance:
       propertyPath: m_EdgeRadius
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 8083123345429391180, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f78462bf15967cf4d87fcc100cb7d194, type: 2}
     - target: {fileID: 8083123346295876868, guid: 458c7a8663305d14a9f9cc2b126262de, type: 3}
       propertyPath: m_Name
       value: MapLevel0
