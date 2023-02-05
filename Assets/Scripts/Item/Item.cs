@@ -40,6 +40,7 @@ public class Item : MonoBehaviour
         if (collision.CompareTag("Box")&&!isUsed)
         {
             result = collision.gameObject.GetComponent<Box>().number;
+            GameObject gameManager = GameObject.Find("GameManager").gameObject;
             switch (itemType)
             {
                 case ItemType.SQR:
@@ -57,11 +58,18 @@ public class Item : MonoBehaviour
                         }
                         
                     }
+                    else if(result == 0)
+                    {
+                        Destroy(collision.gameObject);
+                        gameManager.GetComponent<GameManager>().boxAccount -= 1;
+                        gameManager.GetComponent<GameManager>().CheckBoxAccount();
+                        Debug.Log("无法开根 箱子与方块消失");
+                    }
                     else
                     {
                         Destroy(collision.gameObject);
                         //箱子数量校验
-                        GameObject gameManager = GameObject.Find("GameManager").gameObject;
+                        
                         gameManager.GetComponent<GameManager>().boxAccount -= 1;
                         gameManager.GetComponent<GameManager>().CheckBoxAccount();
                         Debug.Log("无法开根 箱子与方块消失");
