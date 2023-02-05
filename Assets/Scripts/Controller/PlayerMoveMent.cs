@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMoveMent : MonoBehaviour
 {
     public float speed;
-    new private Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
     private Animator animator;
     private float inputX, inputY;
     private float stopX, stopY;

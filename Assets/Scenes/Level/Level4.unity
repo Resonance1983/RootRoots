@@ -1013,7 +1013,7 @@ MonoBehaviour:
   number: 1
   detectLayer:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 1344
   moveSpeed: 4
   loseUI: {fileID: 993433092}
 --- !u!50 &134070798138197874
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   number: 3
   detectLayer:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 1344
   moveSpeed: 4
   loseUI: {fileID: 993433092}
 --- !u!4 &1481444678117329752
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   number: 2
   detectLayer:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 1344
   moveSpeed: 4
   loseUI: {fileID: 993433092}
 --- !u!1001 &1620667353940366808
@@ -1490,7 +1490,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 2067549679789086062}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -1589,7 +1589,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 2067549679993813271}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -1658,7 +1658,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 2067549680057662830}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -3604,7 +3604,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 4600083973747876986}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -3788,7 +3788,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 5419305312940903009}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -8933,7 +8933,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 8083123344479959388}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -10205,7 +10205,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 8083123346436726120}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
