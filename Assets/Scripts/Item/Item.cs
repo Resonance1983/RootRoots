@@ -24,6 +24,7 @@ public class Item : MonoBehaviour
     int addNumber = 2;
     [SerializeField]
     int subNumber = -3;
+    
 
     private Animator characterAnimator;
     private int usedID = Animator.StringToHash("Used");

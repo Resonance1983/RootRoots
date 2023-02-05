@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Box
   - Road
+  - Box1
   layers:
   - Default
   - TransparentFX
