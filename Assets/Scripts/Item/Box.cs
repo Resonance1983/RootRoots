@@ -73,6 +73,12 @@ public class Box : MonoBehaviour
         {
 
             WinOrLose();
+
+            //若成功进入A  则  终点播放动画
+            if ((int)Mathf.Sqrt(number) == Mathf.Sqrt(number))
+            {
+                collision.GetComponentInChildren<Animator>().enabled = true;
+            }
         }
     }
 
