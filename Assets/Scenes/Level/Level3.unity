@@ -1303,7 +1303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1312,18 +1312,18 @@ PrefabInstance:
     - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 540330046}
+      objectReference: {fileID: 1286455274}
     - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CheckFinish
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LoadNext
       objectReference: {fileID: 0}
     - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8462878912541552534, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1351,6 +1351,11 @@ GameObject:
 --- !u!1 &1172232650 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2901903913363437280, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+  m_PrefabInstance: {fileID: 1172232648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1286455274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8462878911695989900, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
   m_PrefabInstance: {fileID: 1172232648}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1361175572

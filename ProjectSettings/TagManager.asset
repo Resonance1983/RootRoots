@@ -8,7 +8,7 @@ TagManager:
   - Wall
   - Box
   - Road
-  - Box1
+  - AudioManager
   layers:
   - Default
   - TransparentFX

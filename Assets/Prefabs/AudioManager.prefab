@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 3069642797735537792}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,10 +431,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cd000432faccd4fb12434f8cce3990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 0}
+  music: {fileID: 0}
+  sound: {fileID: 0}
+  maxMusicVolume: 10
+  minMusicVolume: -40
+  maxSoundVolume: 10
+  minSoundVolume: -40
   playerSource: {fileID: 3069642796453200480}
-  backgroundSource: {fileID: 3069642797429254261}
+  musicSource: {fileID: 0}
   interactSource: {fileID: 3069642796198040006}
+  uiSource: {fileID: 0}
   playerMoveClip: {fileID: 0}
   playerpushClip: {fileID: 0}
   gameClip: {fileID: 8300000, guid: 16ccf1c70fbfaf040a53224839aeb318, type: 3}
   computClip: {fileID: 0}
+  clickclip: {fileID: 0}
