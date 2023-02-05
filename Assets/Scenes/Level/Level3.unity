@@ -1301,6 +1301,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 540330046}
+    - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 540330046}
+    - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckFinish
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadNext
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462878911842785488, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462878912541552534, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 540330046}
+    - target: {fileID: 8462878912541552534, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetStage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462878912685399837, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 540330046}
+    - target: {fileID: 8462878912685399837, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetStage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b08a1aa97ea16d4b8e04c358cd899ca, type: 3}
 --- !u!1 &1172232649 stripped
