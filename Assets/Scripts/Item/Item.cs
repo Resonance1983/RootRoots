@@ -28,6 +28,7 @@ public class Item : MonoBehaviour
 
     private Animator characterAnimator;
     private int usedID = Animator.StringToHash("Used");
+    private bool isUsed = false;
 
     private void Start()
     {
@@ -36,7 +37,7 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Box"))
+        if (collision.CompareTag("Box")&&!isUsed)
         {
             result = collision.gameObject.GetComponent<Box>().number;
             switch (itemType)
@@ -82,6 +83,7 @@ public class Item : MonoBehaviour
                     characterAnimator.SetBool(usedID, true);
                     Move();
                     //Destroy(gameObject);
+                    isUsed = true;
                     break;
                 case ItemType.MUL:
                     break;
