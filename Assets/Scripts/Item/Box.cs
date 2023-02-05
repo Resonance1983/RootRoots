@@ -166,6 +166,9 @@ public class Box : MonoBehaviour
         string CoverSpritePath = "Item/Box/box_";
         switch (num)
         {
+            case 6:
+                CoverSpritePath += "6";
+                break;
             case 7:
                 CoverSpritePath += "7";
                 break;
