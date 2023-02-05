@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 5419305313158609335, guid: d519dadf184d2b24c86de8ac9e2cccc9, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8628939341276863406, guid: d519dadf184d2b24c86de8ac9e2cccc9, type: 3}
       propertyPath: m_Size.x
       value: 0.5
