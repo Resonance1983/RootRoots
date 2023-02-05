@@ -53,8 +53,9 @@ MonoBehaviour:
   number: 16
   detectLayer:
     serializedVersion: 2
-    m_Bits: 1344
+    m_Bits: 64
   moveSpeed: 4
+  loseUI: {fileID: 0}
 --- !u!61 &1481444677357776552
 BoxCollider2D:
   m_ObjectHideFlags: 0
