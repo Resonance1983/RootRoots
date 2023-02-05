@@ -166,17 +166,26 @@ public class Box : MonoBehaviour
         string CoverSpritePath = "Item/Box/box_";
         switch (num)
         {
+            case 6:
+                CoverSpritePath += "6";
+                break;
             case 7:
                 CoverSpritePath += "7";
                 break;
             case 9:
                 CoverSpritePath += "9";
                 break;
+            case 10:
+                CoverSpritePath += "10";
+                break;
             case 15:
                 CoverSpritePath += "15";
                 break;
             case 16:
                 CoverSpritePath += "16";
+                break;
+            case 17:
+                CoverSpritePath += "17";
                 break;
         }
         boxCover.sprite = Resources.Load<Sprite>(CoverSpritePath);
