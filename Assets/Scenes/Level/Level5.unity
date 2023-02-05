@@ -139,6 +139,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5279976698862462247, guid: 758e3e7fa747dc642b0bbd34964cad20, type: 3}
+      propertyPath: boxAccount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279976698862462247, guid: 758e3e7fa747dc642b0bbd34964cad20, type: 3}
       propertyPath: loadScreen
       value: 
       objectReference: {fileID: 1654036457}

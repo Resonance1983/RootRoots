@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     [Header("要达成的箱子数量")]
     public int totalBoxs;
+    [Header("场上的箱子数量")]
+    public int boxAccount;
     public int finishedBoxs;
     public GameObject loadScreen;
 
@@ -27,6 +29,14 @@ public class GameManager : MonoBehaviour
             Dialog.SetActive(true);
             //StartCoroutine(LoadNextStage());
         }
+    }
+
+    public void CheckBoxAccount()
+    { 
+        if(totalBoxs-finishedBoxs>boxAccount){
+            Debug.Log("Box need for passing is lack.");
+            GameObject.Find("Canvas").transform.Find("Dialog_Fail").gameObject.SetActive(true);
+        }   
     }
 
 

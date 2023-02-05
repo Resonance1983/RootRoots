@@ -55,6 +55,10 @@ public class Item : MonoBehaviour
                     else
                     {
                         Destroy(collision.gameObject);
+                        //箱子数量校验
+                        GameObject gameManager = GameObject.Find("GameManager").gameObject;
+                        gameManager.GetComponent<GameManager>().boxAccount -= 1;
+                        gameManager.GetComponent<GameManager>().CheckBoxAccount();
                         Debug.Log("无法开根 箱子与方块消失");
                     }
                     //TODO
@@ -77,8 +81,10 @@ public class Item : MonoBehaviour
                     collision.gameObject.GetComponent<Box>().number -= subNumber;
                     Debug.Log(collision.gameObject.GetComponent<Box>().number);
 
-                    if (collision.gameObject.GetComponent<Box>().number < 0)
+                    if (collision.gameObject.GetComponent<Box>().number < 0){
                         Debug.Log("负数  Loss");
+                        GameObject.Find("Canvas").transform.Find("Dialog_Fail").gameObject.SetActive(true);
+                    }
                     characterAnimator.SetBool(usedID, true);
                     Move();
                     //Destroy(gameObject);
