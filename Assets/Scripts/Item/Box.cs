@@ -79,6 +79,7 @@ public class Box : MonoBehaviour
             if ((int)Mathf.Sqrt(number) == Mathf.Sqrt(number))
             {
                 collision.GetComponentInChildren<Animator>().enabled = true;
+                collision.GetComponent<Collider2D>().enabled = false;
             }
         }
     }
@@ -97,7 +98,7 @@ public class Box : MonoBehaviour
     public void WinOrLose()
     {
         
-        if ((int)Mathf.Sqrt(number) == Mathf.Sqrt(number))
+        if ((int)Mathf.Sqrt(number) == Mathf.Sqrt(number) && (int)Mathf.Sqrt(number) !=1)
         {
             //过关
             FindObjectOfType<GameManager>().finishedBoxs++;
