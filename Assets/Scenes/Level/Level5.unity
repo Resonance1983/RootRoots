@@ -672,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarrotFly
       objectReference: {fileID: 0}
+    - target: {fileID: 2392659366056749842, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2392659366056749843, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
@@ -1264,6 +1268,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5ecd6d4328678324e9cc207d54ee60ef, type: 3}
+    - target: {fileID: 2392659366056749842, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2392659366056749843, guid: 85c394f3ed1a9114c9b26101c4948000, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
