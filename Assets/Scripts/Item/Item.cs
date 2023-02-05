@@ -50,8 +50,12 @@ public class Item : MonoBehaviour
                         Debug.Log(result);
                         collision.gameObject.GetComponent<Box>().number = result;
                         //播放萝卜飞出箱子的动画
-                        collision.transform.GetChild(1).gameObject.SetActive(true);
-                        collision.gameObject.GetComponentInChildren<Carrot>().carrotAnim.SetBool("SubCarrot", true);
+                        if ((int)Mathf.Sqrt(result) != 1)
+                        {
+                            collision.transform.GetChild(1).gameObject.SetActive(true);
+                            collision.gameObject.GetComponentInChildren<Carrot>().carrotAnim.SetBool("SubCarrot", true);
+                        }
+                        
                     }
                     else
                     {
