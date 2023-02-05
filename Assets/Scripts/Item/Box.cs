@@ -110,10 +110,9 @@ public class Box : MonoBehaviour
             GetComponentInChildren<SpriteRenderer>().color = finishColor;
             Debug.Log("胜利");
         }
-        else if((int)Mathf.Sqrt(number) == 1)
+        else if(number == 1)
         {
-            //什么都不发生
-            ;
+
         }
         else
         {
